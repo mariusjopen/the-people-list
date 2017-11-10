@@ -3,6 +3,7 @@
 $theme = wp_get_theme();
 $ver = $theme->get('Version');
 
+
 remove_action( 'wp_head', 'wp_generator' );
 add_filter( 'show_admin_bar', '__return_false' );
 
@@ -13,6 +14,11 @@ function add_theme_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
+// MENU
+
+function register_my_menu() {
+  register_nav_menu('header-menu',__( 'Header Menu' ));
+}
 
 
 
